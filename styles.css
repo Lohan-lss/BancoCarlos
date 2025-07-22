@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif; /* Nova fonte */
+    background: #e9ecef; /* Fundo mais claro */
+    color: #343a40; /* Cor de texto mais escura */
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #212529; /* Azul escuro */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; /* Ajuste de padding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+/* Menu de navegação */
+nav {
+  width: auto; /* Ajuste para largura automática */
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Espaçamento menor entre itens */
+}
+
+nav ul li {
+    font-weight: 500; /* Peso da fonte ajustado */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+    color: #adb5bd; /* Cor ao passar o mouse */
+    text-decoration: none; /* Remover sublinhado padrão */
+}
+
+/* Botão login */
+button#btn-login {
+    margin-left: auto; /* Alinhar à direita */
+    background-color: transparent;
+    border: 1px solid white; /* Borda mais fina */
+    padding: 0.5rem 1.2rem; /* Ajuste de padding */
+    border-radius: 20px; /* Mais arredondado */
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button#btn-login:hover,
+button#btn-login:focus {
+    background-color: white;
+    color: #212529; /* Cor do texto ao passar o mouse */
+    border-color: white;
+    outline: none;
+}
+
+/* Pop-up fundo */
+#popup-bg {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6); /* Fundo mais escuro */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 1rem;
+}
+
+/* Pop-up container */
+#popup {
+    background: white;
+    border-radius: 10px; /* Mais arredondado */
+    width: 100%;
+    max-width: 400px; /* Largura máxima maior */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Sombra mais pronunciada */
+    position: relative;
+    padding: 2.5rem 2.5rem 2rem 2.5rem; /* Ajuste de padding */
+    animation: popin 0.4s ease-out forwards; /* Animação mais suave */
+}
+
+@keyframes popin {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  
+    /* Botão fechar "X" */
+    #popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5rem; /* Tamanho maior */
+      font-weight: 700;
+      color: #6c757d; /* Cor mais suave */
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    #popup-close:hover,
+    #popup-close:focus {
+      color: #dc3545; /* Cor de destaque ao passar o mouse */
+      outline: none;
+    }
+  
+    /* Formulário */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem; /* Espaçamento maior */
+      margin-top: 1.5rem;
+    }
+  
+    label {
+      font-weight: 600;
+      color: #495057; /* Cor de texto mais escura */
+      font-size: 0.95rem;
+    }
+  
+    input[type="email"],
+    input[type="password"] {
+      padding: 0.8rem 1rem; /* Ajuste de padding */
+      font-size: 1rem;
+      border: 1px solid #ced4da; /* Borda mais suave */
+      border-radius: 8px; /* Mais arredondado */
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    input[type="email"].invalid,
+    input[type="password"].invalid {
+      border-color: #dc3545; /* Vermelho */
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25); /* Sombra de foco vermelha */
+    }
+  
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #007bff; /* Azul de foco */
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra de foco azul */
+    }
+  
+    /* Botões do pop-up */
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem; /* Espaçamento maior */
+      margin-top: 1rem;
+    }
+    .buttons button {
+      flex: 1;
+      padding: 0.8rem 0; /* Ajuste de padding */
+      border-radius: 8px; /* Mais arredondado */
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      font-size: 0.95rem;
+    }
+    .buttons button:disabled {
+      cursor: not-allowed; /* Cursor de não permitido */
+      opacity: 0.6; /* Opacidade maior */
+    }
+    .buttons button:nth-child(1) {
+      background-color: #6c757d; /* Cinza */
+      color: white;
+    }
+    .buttons button:nth-child(1):hover:enabled,
+    .buttons button:nth-child(1):focus:enabled {
+      background-color: #5a6268;
+      outline: none;
+    }
+    .buttons button:nth-child(2) {
+      background-color: #007bff; /* Azul primário */
+      color: white;
+    }
+    .buttons button:nth-child(2):hover:enabled,
+    .buttons button:nth-child(2):focus:enabled {
+      background-color: #0056b3;
+      outline: none;
+    }
+    .buttons button:nth-child(3) {
+      background-color: transparent;
+      border: 1px solid #007bff; /* Borda azul */
+      color: #007bff;
+    }
+    .buttons button:nth-child(3):hover:enabled,
+    .buttons button:nth-child(3):focus:enabled {
+      background-color: #007bff;
+      color: white;
+      outline: none;
+    }
+  
+    /* Responsividade e ajuste para mobile */
+    @media (max-width: 768px) { /* Ponto de quebra maior para mobile */
+      header {
+        padding: 0.8rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        justify-content: center;
+      }
+      nav ul {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        order: 1;
+      }
+      button#btn-login {
+        order: 2;
+        width: 100%;
+        max-width: 180px; /* Largura maior para o botão */
+        align-self: center;
+        margin-left: 0;
+      }
+      #popup {
+        width: 95%; /* Ocupa mais largura em mobile */
+        max-width: 350px;
+        padding: 1.5rem;
+      }
+      .buttons {
+        flex-direction: column; /* Botões empilhados em mobile */
+        gap: 0.6rem;
+      }
+    }

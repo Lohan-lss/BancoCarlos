@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title> <!-- Título mais específico -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicione link para fonte do Google Fonts, se usar -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="he">
+    <nav>
+        <ul>
+            <a style="color: white;text-decoration: none;" href="index.html"><li tabindex="0">Início</li></a>
+            <li tabindex="0">Produtos</li>
+            <li tabindex="0">Contato</li>
+            <li tabindex="0">Sobre</li>
+            <a style="color: white;text-decoration: none;" href="cadastro.html"><li  tabindex="0">Cadastro Produto</li></a>
+            <a style="color: white;text-decoration: none;" href="cliente.html"><li  tabindex="0">Cadastro Cliente</li></a>
+        </ul>
+    </nav>
+    <button id="btn-login" aria-haspopup="dialog" aria-controls="popup" aria-expanded="false">Login</button>
+</header>
+
+<div id="popup-bg" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1">
+    <div id="popup">
+        <button id="popup-close" aria-label="Fechar pop-up login">&times;</button>
+        <h2 id="popup-title" style="text-align:center; font-weight:700; font-size:1.3rem; margin-bottom:1rem; color: #007bff;">Login</h2> <!-- Cor do título ajustada -->
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="email" autocomplete="username" placeholder="Digite seu email" required />
+            <label for="password">Senha</label>
+            <input type="password" id="password" autocomplete="current-password" placeholder="Digite sua senha" required />
+            <div class="buttons">
+                <button type="button" id="btn-cadastrar" disabled>Cadastrar</button>
+                <button type="submit" id="btn-login-form" disabled>Login</button>
+                <button type="button" id="btn-recuperar-senha" disabled>Recuperar senha</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <div class="container">
+        <h1>CADASTRO DE PRODUTOS</h1> <!-- Cor do título ajustada via CSS -->
+            <input type="text" id="codigo" placeholder="Código" required>
+            <input type="text" id="produto" placeholder="Nome do Produto" required>
+            <input type="text" id="categoria" placeholder="Categoria" required>
+            <input type="text" id="quantidade" placeholder="Quantidade" required>
+            <input type="text" id="valor" placeholder="Valor do Produto" required>
+            <input id="cadastrarProduto" type="submit" value="Cadastrar Produto" >
+    </div>
+    <div class="container">
+        <h1>BUSCA E ATUALIZAÇÃO NOS PRODUTOS</h1> <!-- Cor do título ajustada via CSS -->
+            <input type="text" id="idProduto" placeholder="Insira o ID" required>
+            <input id="buscarProduto" type="submit" value="Buscar Produto"> <!-- Estilo via CSS -->
+
+            <input type="text" id="dadoProduto" placeholder="Produto">
+            <input type="text" id="dadoCategoria" placeholder="Categoria">
+            <input type="text" id="dadoQuantidade" placeholder="Quantidade">
+            <input type="text" id="dadoValor" placeholder="Valor do Produto">
+            <input id="atualizarProduto" type="submit" value="Atualizar Produto"> <!-- Estilo via CSS -->
+            
+            <input id="deletarProduto" type="submit" value="Deletar Produto"> <!-- Estilo via CSS -->
+    </div>
+
+<script type="module" src="script.js"></script>
+<script type="module" src="script2.js"></script>
+
+</body>
+</html>

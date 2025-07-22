@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title> <!-- Título mais específico -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicione link para fonte do Google Fonts, se usar -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="he">
+    <nav>
+        <ul>
+            <a style="color: white;text-decoration: none;" href="index.html"><li tabindex="0">Início</li></a>
+            <li tabindex="0">Produtos</li>
+            <li tabindex="0">Contato</li>
+            <li tabindex="0">Sobre</li>
+            <a style="color: white;text-decoration: none;" href="cadastro.html"><li  tabindex="0">Cadastro Produto</li></a>
+            <a style="color: white;text-decoration: none;" href="cliente.html"><li  tabindex="0">Cadastro Cliente</li></a>
+        </ul>
+    </nav>
+    <button id="btn-login" aria-haspopup="dialog" aria-controls="popup" aria-expanded="false">Login</button>
+</header>
+
+<div id="popup-bg" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1">
+    <div id="popup">
+        <button id="popup-close" aria-label="Fechar pop-up login">&times;</button>
+        <h2 id="popup-title" style="text-align:center; font-weight:700; font-size:1.3rem; margin-bottom:1rem; color: #007bff;">Login</h2> <!-- Cor do título ajustada -->
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="email" autocomplete="username" placeholder="Digite seu email" required />
+            <label for="password">Senha</label>
+            <input type="password" id="password" autocomplete="current-password" placeholder="Digite sua senha" required />
+            <div class="buttons">
+                <button type="button" id="btn-cadastrar" disabled>Cadastrar</button>
+                <button type="submit" id="btn-login-form" disabled>Login</button>
+                <button type="button" id="btn-recuperar-senha" disabled>Recuperar senha</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <div class="container"> <!-- Removido estilo inline para usar CSS externo -->
+        <h1>Cadastro De Clientes</h1> <!-- Cor do título ajustada via CSS -->
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="text" id="idade" placeholder="Idade" required>
+            <input type="text" id="numero" placeholder="Numero de Telefone" required>
+            <input type="text" id="cpf" placeholder="CPF" required>
+            <input type="text" id="cep" placeholder="CEP" required>
+            <input id="cadastrarCliente" type="submit" value="Cadastrar Cliente" >
+    </div>
+    <div class="container"> <!-- Removido estilo inline para usar CSS externo -->
+        <h1>Busca e Atualização Dos Clientes</h1> <!-- Cor do título ajustada via CSS -->
+            <input type="text" id="idCliente" placeholder="Insira o Nome do Cliente" required>
+            <input id="buscarCliente" type="submit" value="Procurar Cliente"> <!-- Estilo via CSS -->
+
+            <input type="text" id="dadoNome" placeholder="Nome">
+            <input type="text" id="dadoIdade" placeholder="Idade">
+            <input type="text" id="dadoNumero" placeholder="Numero de Telefone">
+            <input type="text" id="dadoCPF" placeholder="CPF">
+            <input type="text" id="dadoCEP" placeholder="CEP">
+            <input id="atualizarCliente" type="submit" value="Atualizar Cliente"> <!-- Estilo via CSS -->
+            
+            <input id="deletarCliente" type="submit" value="Deletar Cliente"> <!-- Estilo via CSS -->
+    </div>
+
+<script type="module" src="script.js"></script>
+<script type="module" src="script3.js"></script>
+
+</body>
+</html>

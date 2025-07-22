@@ -1,0 +1,331 @@
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif; /* Nova fonte */
+    background-color: #f8f9fa; /* Fundo mais claro */
+    margin: 0;
+    padding: 2rem; /* Padding geral maior */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os contêineres quebrem a linha */
+    justify-content: center; /* Centraliza os contêineres */
+    gap: 2rem; /* Espaçamento entre os contêineres */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    align-items: flex-start; /* Alinha os itens ao topo */
+}
+
+.container {
+    flex: 1; /* Permite que os contêineres cresçam */
+    min-width: 300px; /* Largura mínima para cada contêiner */
+    max-width: 450px; /* Largura máxima para cada contêiner */
+    background-color: #ffffff; /* Fundo branco para os contêineres */
+    padding: 30px; /* Padding maior */
+    border-radius: 12px; /* Mais arredondado */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os elementos do formulário */
+}
+
+.he { /* Cabeçalho para páginas de cadastro */
+    background-color: #212529; /* Azul escuro */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem; /* Ajuste de padding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+nav {
+    width: auto; /* Ajuste para largura automática */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Espaçamento menor entre itens */
+}
+
+nav ul li {
+    font-weight: 500; /* Peso da fonte ajustado */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+    color: #adb5bd; /* Cor ao passar o mouse */
+    text-decoration: none; /* Remover sublinhado padrão */
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Azul primário para títulos */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+form {
+    margin-bottom: 0; /* Remover margem inferior do formulário */
+}
+
+input[type="text"] {
+    width: 100%; /* Ocupa 100% da largura do pai */
+    padding: 12px 15px; /* Padding maior */
+    border: 1px solid #ced4da; /* Borda mais suave */
+    border-radius: 8px; /* Mais arredondado */
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+input[type="submit"] {
+    background-color: #28a745; /* Verde para cadastrar */
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px; /* Padding maior */
+    border: none; /* Remover borda */
+    border-radius: 8px; /* Mais arredondado */
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+input[type="submit"]:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de leve levantamento */
+}
+
+/* Estilos específicos para botões de ação */
+input[type="submit"][value="Procurar Cliente"],
+input[type="submit"][value="Buscar Produto"] {
+    background-color: #6f42c1; /* Roxo para buscar */
+}
+input[type="submit"][value="Procurar Cliente"]:hover,
+input[type="submit"][value="Buscar Produto"]:hover {
+    background-color: #5a32a3;
+}
+
+input[type="submit"][value="Atualizar Cliente"],
+input[type="submit"][value="Atualizar Produto"] {
+    background-color: #007bff; /* Azul para atualizar */
+}
+input[type="submit"][value="Atualizar Cliente"]:hover,
+input[type="submit"][value="Atualizar Produto"]:hover {
+    background-color: #0056b3;
+}
+
+input[type="submit"][value="Deletar Cliente"],
+input[type="submit"][value="Deletar Produto"] {
+    background-color: #dc3545; /* Vermelho para deletar */
+}
+input[type="submit"][value="Deletar Cliente"]:hover,
+input[type="submit"][value="Deletar Produto"]:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para o pop-up de login (copiados de styles.css para consistência) */
+button#btn-login {
+    margin-left: auto;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button#btn-login:hover,
+button#btn-login:focus {
+    background-color: white;
+    color: #212529;
+    border-color: white;
+    outline: none;
+}
+
+#popup-bg {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 1rem;
+}
+
+#popup {
+    background: white;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    animation: popin 0.4s ease-out forwards;
+}
+
+@keyframes popin {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+  
+    #popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #6c757d;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    #popup-close:hover,
+    #popup-close:focus {
+      color: #dc3545;
+      outline: none;
+    }
+  
+    form { /* Este seletor pode precisar ser mais específico se houver outros formulários */
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+  
+    label {
+      font-weight: 600;
+      color: #495057;
+      font-size: 0.95rem;
+    }
+  
+    input[type="email"],
+    input[type="password"] {
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    input[type="email"].invalid,
+    input[type="password"].invalid {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+  
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .buttons button {
+      flex: 1;
+      padding: 0.8rem 0;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      font-size: 0.95rem;
+    }
+    .buttons button:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+    .buttons button:nth-child(1) {
+      background-color: #6c757d;
+      color: white;
+    }
+    .buttons button:nth-child(1):hover:enabled,
+    .buttons button:nth-child(1):focus:enabled {
+      background-color: #5a6268;
+      outline: none;
+    }
+    .buttons button:nth-child(2) {
+      background-color: #007bff;
+      color: white;
+    }
+    .buttons button:nth-child(2):hover:enabled,
+    .buttons button:nth-child(2):focus:enabled {
+      background-color: #0056b3;
+      outline: none;
+    }
+    .buttons button:nth-child(3) {
+      background-color: transparent;
+      border: 1px solid #007bff;
+      color: #007bff;
+    }
+    .buttons button:nth-child(3):hover:enabled,
+    .buttons button:nth-child(3):focus:enabled {
+      background-color: #007bff;
+      color: white;
+      outline: none;
+    }
+  
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+        flex-direction: column; /* Empilha os contêineres em mobile */
+        align-items: center;
+      }
+      .container {
+        max-width: 95%; /* Ocupa mais largura em mobile */
+        padding: 20px;
+      }
+      header {
+        padding: 0.8rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        justify-content: center;
+      }
+      nav ul {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        order: 1;
+      }
+      button#btn-login {
+        order: 2;
+        width: 100%;
+        max-width: 180px;
+        align-self: center;
+        margin-left: 0;
+      }
+      #popup {
+        width: 95%;
+        max-width: 350px;
+        padding: 1.5rem;
+      }
+      .buttons {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+    }
